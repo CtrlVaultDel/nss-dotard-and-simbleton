@@ -8,6 +8,18 @@
 </head>
 <body>
     <main>
+        <article class="searchResults">
+            <section class="searchField">
+                <input type="text" placeholder="Enter business name" id="companySearch" />
+                <input type="text" placeholder="Enter agent name" id="agentSearch" />
+            </section>
+            <section class="foundCompany">
+                <!-- This will populate the first company that matches the user's input in the search field  -->
+            </section>
+            <section class="foundAgent">
+                <!-- This will populate the first agent that matches the user's input in the search field -->
+            </section>
+        </article>
         <article class="businessList--All">
             <!-- Companies will be added here automatically by JS -->
         </article>
@@ -18,7 +30,7 @@
             <!-- Only Manufacturing companies will go here. JS will add them automatically -->
         </article>
         <article class="agents">
-
+            <!-- Agents will be added here automatically by JS -->
         </article>
     </main>
     <script src="./scripts/main.js" type="module"></script>

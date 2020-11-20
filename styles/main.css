@@ -13,3 +13,26 @@
 .company__street, .agent__company{
     margin-bottom: 15px;
 }
+
+.searchResults{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.searchField{
+    display: flex;
+    flex-basis: 100%;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.foundCompany, .foundAgent{
+    flex-basis: 50%;
+    margin: 0 auto;
+    border-bottom: solid black 1px;
+    text-align: center;
+}
+
+.searchField, .foundCompany, .foundAgent{
+    margin: 0 auto;
+}
