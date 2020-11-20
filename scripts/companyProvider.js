@@ -134,3 +134,16 @@ export const purchasingAgents = companies.map(companyObject => {
     phoneNumber: companyObject.phoneWork
   }
 })
+
+export const findCompany = (companyCriteria) =>{
+  return companies.find(company => company.companyName.includes(companyCriteria));
+}
+
+export const findAgent = (agentCriteria) =>{
+ const agentToFormat = companies.find(agent => agent.purchasingAgent.nameFirst.includes(agentCriteria) || agent.purchasingAgent.nameLast.includes(agentCriteria));
+ return {
+    fullName: `${agentToFormat.purchasingAgent.nameFirst} ${agentToFormat.purchasingAgent.nameLast}`,
+    company: agentToFormat.companyName,
+    phoneNumber: agentToFormat.phoneWork
+  }
+}
