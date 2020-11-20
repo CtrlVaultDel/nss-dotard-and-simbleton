@@ -1,4 +1,4 @@
-const businesses = [
+const companies = [
     {
       purchasingAgent: { nameLast: "Kirlin", nameFirst: "Kristy" },
       phoneWork: "089.129.2290 x9400",
@@ -110,3 +110,7 @@ const businesses = [
       addressCity: "Watrous"
     }
   ];
+
+export const useCompanies = () =>{
+    return companies.slice();
+}
