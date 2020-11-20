@@ -111,14 +111,26 @@ const companies = [
     }
   ];
 
+// Make a copy of the entire array of companies
 export const useCompanies = () =>{
     return companies.slice();
 }
 
+// Only export New York companies
 export const newYorkCompanies = companies.filter(companyObject =>{
   return companyObject.addressStateCode === "NY";
 })
 
+// Only export manufacturing companies
 export const manufacturingCompanies = companies.filter(companyObject =>{
   return companyObject.companyIndustry === "Manufacturing";
+})
+
+// Only export the purchasing agents for each company
+export const purchasingAgents = companies.map(companyObject => {
+  return {
+    fullName: `${companyObject.purchasingAgent.nameFirst} ${companyObject.purchasingAgent.nameLast}`,
+    company: companyObject.companyName,
+    phoneNumber: companyObject.phoneWork
+  }
 })
