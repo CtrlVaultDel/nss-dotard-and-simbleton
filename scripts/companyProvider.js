@@ -135,10 +135,10 @@ export const purchasingAgents = companies.map(companyObject => {
   }
 })
 
-export const findCompany = (companyCriteria) =>{
-  return companies.find(company => company.companyName.includes(companyCriteria));
-}
+// Returns the 1st company in the company array that matches what is passed in as an argument
+export const findCompany = (companyCriteria) => companies.find(company => company.companyName.includes(companyCriteria));
 
+// Returns the 1st agent in the agent array that matches what is passed in as an argument
 export const findAgent = (agentCriteria) =>{
  const agentToFormat = companies.find(agent => agent.purchasingAgent.nameFirst.includes(agentCriteria) || agent.purchasingAgent.nameLast.includes(agentCriteria));
  return {

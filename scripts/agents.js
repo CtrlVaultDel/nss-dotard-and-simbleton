@@ -1,22 +1,13 @@
-export const agents = (agentObject) =>{
-    return `
+export const agents = (agentObject) =>`
         <section class="agent">
-            <h2 class="agent__name">
-                ${agentObject.fullName}
-            </h2>
-            <div class="agent__company">
-                ${agentObject.company}
-            </div>
-            <div class="agent__phone">
-                ${agentObject.phoneNumber}
-            </div>
+            ${agentTemplate(agentObject)}
         </section>
     `
-}
 
-export const agentFound = (agentObject) =>{
-    return `
-        <h2 class="agent__name">
+export const agentFound = (agentObject) => agentTemplate(agentObject);
+
+const agentTemplate = (agentObject) => `
+    <h2 class="agent__name">
             ${agentObject.fullName}
         </h2>
         <div class="agent__company">
@@ -26,4 +17,3 @@ export const agentFound = (agentObject) =>{
             ${agentObject.phoneNumber}
         </div>
     `
-}
