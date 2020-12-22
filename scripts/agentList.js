@@ -3,27 +3,21 @@ import { findAgent } from "./companyProvider.js";
 import { agents } from "./agents.js";
 import { agentFound } from "./agents.js";
 
-export const agentList = () => {
-    const contentTarget = document.querySelector(".agents");
-    const agentArray = purchasingAgents;
-    contentTarget.innerHTML = `<h1 class="listHeader">Purchasing Agents</h1>`;
+// Global Selectors
+const agentSearchResultSection = document.querySelector(".foundAgent")
 
-    agentArray.forEach(
-        (agentObject) => {
-            contentTarget.innerHTML += agents(agentObject);
-        }
-    );
+export const agentList = () => {
+    const contentTarget = document.querySelector(".agents__list");
+    const agentArray = purchasingAgents;
+
+    contentTarget.innerHTML = agentArray.map((agentObject) => agents(agentObject)).join("");
 }
 
 // This is the section that agent search results will be sent to
-const agentSearchResultSection = document.querySelector(".foundAgent")
-
 document
     .querySelector("#agentSearch")
     .addEventListener("keypress", keyPressEvent => {
         if (keyPressEvent.charCode === 13) {
-            console.log(keyPressEvent.target.value);
-
             // Set the user's input to the variable lookingFor
             let lookingFor = keyPressEvent.target.value;
             
